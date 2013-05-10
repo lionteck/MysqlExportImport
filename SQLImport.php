@@ -11,7 +11,7 @@ class SQLImport{
 	public function import($file_name){
 		$file=fopen($file_name,"r");
 		$file_str=fread($file,filesize($file_name));
-		$istr=explode(";",$file_str);
+		$istr=explode(";\n",$file_str);
 		foreach($istr as $is){
 			$res=mysql_query($is);
 		}
